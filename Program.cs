@@ -14,7 +14,25 @@ while (true)
     }
 }
 
+int Add(int x, int y)
+{
+    return x + y;
+}
 
+int Subtract(int x, int y)
+{
+    return x - y;
+}
+
+int Multiply(int x, int y)
+{
+    return x * y;
+}
+
+int Divide(int x, int y)
+{
+    return x / y;
+}
 int SimpleCalculator()
 {
     Console.WriteLine("輸入第一個數字:");
@@ -33,18 +51,18 @@ int SimpleCalculator()
     switch (op)
     {
         case '+':
-            result = a + b;
+            result = Add(a, b);
             break;
         case '-':
-            result = a - b;
+            result = Subtract(a, b);
             break;
         case '*':
-            result = a * b;
+            result = Multiply(a, b);
             break;
         case '/':
             try
             { 
-                result = a / b;
+                result = Divide(a, b);
             }
             catch (DivideByZeroException)
             {
