@@ -42,18 +42,19 @@ int SimpleCalculator()
             result = a * b;
             break;
         case '/':
-            if (b != 0)
-            {
+            try
+            { 
                 result = a / b;
             }
-            else
+            catch (DivideByZeroException)
             {
-                Console.WriteLine("錯誤: 除數不能為零");
+            Console.WriteLine("錯誤: 除以零");
+            return 0;
             }
             break;
         default:
-            Console.WriteLine("錯誤: 不支援的運算方式");
-            break;
+            Console.WriteLine("錯誤: 無效的運算符");
+            return 0;
 
     }
 
